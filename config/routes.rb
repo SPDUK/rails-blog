@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # pages/home route displays the home .erb file inside the views/pages folder
   root 'pages#home'
   get '/about', to: 'pages#about'
+  resources :articles
 end
