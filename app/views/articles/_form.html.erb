@@ -1,24 +1,5 @@
-<% if @article.errors.any? %>
-<div id="form-alerts">
-    <div class="alert alert-danger">
-      <div class="alert-heading">
-        <h2>
-          <% pluralize(@article.errors.count, "error")%>
-          This article could not be saved!
-        </h2>
-        <div class="mb-0">
-          <ul>
-           <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg%></li>
-            <% end%>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div> 
-<% end %>
-
-
+<%# TODO: find out why this is like this, why do I need partial: to fix it? %>
+<%= render partial: 'shared/errors', locals:{obj: @article} %>
 <div class="container" id="form">
   <%= form_for @article do |f| %> 
     <div class="form-group">
