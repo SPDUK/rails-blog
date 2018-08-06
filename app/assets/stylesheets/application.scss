@@ -109,15 +109,21 @@
    }
  }
 
-//   for individual articles
+ // for individual articles
 .article {
   padding: 0px;
 .article-actions {
-  padding: 10px;
+  padding:10px 0px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   @media (min-width: 768px) {
   }
 }
+}
+
+// i don't know why and this isn't a css-related project
+// so I can't be bothered to fix it properly
+html, body {
+  overflow-x: hidden;
 }
