@@ -15,6 +15,7 @@
  *= require_self
  */
 
+//   logo / navbar
  #logo {
   transition: 0.2s ease-in;
   font-weight: 800;
@@ -26,6 +27,7 @@
   }
  }
 
+// jumobotron
  .jumbotron {
     height: 95vh;
     width: 100%;
@@ -53,6 +55,8 @@
       height: 400px;
     }
  }
+
+// footer
  .footer {
    text-align: center;
    background-color: rgb(207, 207, 207);
@@ -76,11 +80,31 @@
    }
  }
 
+// form stuff
  #form {
    max-width: 600px;
-
    .form-buttons {
      display: flex;
     justify-content:space-between;
+   }
+ }
+
+ #form-alerts {
+   margin: auto;
+   opacity: 0.9;
+   @media (min-width: 768px) {
+    width: 550px;
+   }
+   transition: 0.7 ease-in;
+   animation: 0.7s formAlert forwards;
+   opacity: 0;
+ }
+ @keyframes formAlert {
+   0% {
+    transform: translateY(-100px);
+   }
+   100% {
+     transform: translateY(0px);
+     opacity: 1;
    }
  }
