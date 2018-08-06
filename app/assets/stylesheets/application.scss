@@ -112,14 +112,27 @@
  // for individual articles
 .article {
   padding: 0px;
-.article-actions {
-  padding:10px 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  &-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  @media (min-width: 768px) {
+    a {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
   }
-}
+  &-card {
+    padding: 5px;
+  }
+  &-title {
+
+  }
+  &-body {
+
+  }
+
 }
 
 // i don't know why and this isn't a css-related project
