@@ -108,3 +108,16 @@
      opacity: 1;
    }
  }
+
+//   for individual articles
+.article {
+  padding: 0px;
+.article-actions {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @media (min-width: 768px) {
+  }
+}
+}

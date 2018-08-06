@@ -2,8 +2,8 @@
 
 class ArticlesController < ApplicationController
   # do this before doing any of the CRUD actions
-  # sets article to be the current article clicked, on how? magic 
-  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  # sets article to be the current article clicked, on how? magic
+  before_action :set_article, only: %i[edit update show destroy]
 
   def index
     # named plural because it finds all
@@ -24,9 +24,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
-  end
-
+  def show; end
 
   def update
     # use the article_params method for validation
@@ -44,9 +42,7 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-  def edit
-  end
-
+  def edit; end
 
   private
 
