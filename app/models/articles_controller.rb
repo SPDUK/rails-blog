@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
+  def index
+    # named plural because it finds all
+    @articles = Article.all
+  end
   def new
     @article = Article.new
   end

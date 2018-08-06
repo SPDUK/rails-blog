@@ -1,0 +1,15 @@
+<h1> listing all articles</h1>
+<%= link_to "Create a new article", new_article_path, :class => "btn btn-primary" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.description %></td>
+    </tr>
+  <% end %>
+</table>
