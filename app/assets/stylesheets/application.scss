@@ -25,3 +25,9 @@
     color: darken($color: #fafafa, $amount: 20);
   }
  }
+
+ .jumbotron {
+   &-center {
+     text-align: center;
+   }
+ }
