@@ -75,3 +75,12 @@
     }
    }
  }
+
+ #form {
+   max-width: 600px;
+
+   .form-buttons {
+     display: flex;
+    justify-content:space-between;
+   }
+ }
