@@ -1,7 +1,11 @@
-<div class="jumbotron jumbotron-center">
+<div class="jumbotron">
   <div class="container">
-    <h1> Home page</h1>
-    <%= link_to 'About', about_path, :class => "btn btn-light"%>
-    <%= link_to 'Create an article', new_article_path, :class => "btn btn-primary"%>
+    <div class="jumbotron-title">
+      <p>Blogs on Rails</p>
+      <p>Create a new Blog!</p>  
+      <%= link_to 'About', about_path, :class => "btn btn-light card-link"%>
+      <%= link_to 'Create an article', new_article_path, :class => "btn btn-primary card-link"%>
+    </div>
+    </div>
   </div>
 </div>
