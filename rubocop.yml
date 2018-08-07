@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.5
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
@@ -18,7 +18,8 @@ Rails:
 
 # Line length
 Metrics/LineLength:
-  Max: 100
+  Max: 120
+  IgnoredPatterns: ['\A#']
 
 # Prefer assert_not over assert !
 Rails/AssertNot:
