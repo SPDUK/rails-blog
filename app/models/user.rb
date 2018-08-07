@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  #user has many articles
+  has_many :articles
   # User.username - required, unique case insensitive, length 3-20
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: {minimum: 3, maximum: 20}
 
