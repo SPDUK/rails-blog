@@ -1,0 +1,21 @@
+<%= render partial: 'shared/errors', locals: {obj: @user} %>
+<div class="container" id="form">
+  <%= form_for @user do |f| %>
+    <div class="form-group">
+      <%= f.label :username %>
+      <%= f.text_field :username, class: "form-control", placeholder: "Username", autofocus: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control", placeholder: "user@gmail.com" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+    </div>
+    <div class="form-group form-buttons">
+      <%= link_to "Back to All Articles", users_path, class: "btn" %>
+      <%= f.submit(@user.new_record? ? "Sign up" : "Update profile", class: "btn btn-primary") %>
+    </div>
+  <% end %>
+</div>
