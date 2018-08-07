@@ -1,4 +1,12 @@
 @import "bootstrap";
+@import "./users.scss";
+@import "./navbar.scss";
+@import "./index.scss";
+@import "./footer.scss";
+@import "./form.scss";
+@import "./article.scss";
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,142 +22,6 @@
  *= require_tree .
  *= require_self
  */
-
-//   logo / navigation
- #logo {
-  transition: 0.2s ease-in;
-  font-weight: 800;
-  color: #fafafa;
-  &:hover {
-    transition: 0.2s ease-in;
-    transform: scale(1.04);
-    color: darken($color: #fafafa, $amount: 20);
-  }
- }
-
-// index css
- .jumbotron {
-    height: 95vh;
-    width: 100%;
-    background: asset-url('rails.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    text-align: center;
-   border-radius: 0;
-    @media (min-width: 768px) {
-      height: 800px;
-    }
-    &-title {
-      margin-top: 100px;
-      font-size: 2em;
-      @media (min-width: 768px) {
-        font-size: 3em;
-      }
-    }
-    .container {
-      color: #fafafa;
-      display: flex;  
-      justify-content: center;
-      height: 400px;
-    }
- }
-
-// footer
- .footer {
-   text-align: center;
-   background-color: rgb(207, 207, 207);
-   padding: 20px 0;
-   a {
-     color: rgb(39, 39, 39);
-     &:visited {
-       color: rgb(39, 39, 39);
-     }
-   }
-   ul {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-     padding-left: 0;
-     margin: 0;
-    li {
-      text-align: center;
-      margin: 0 2%;
-    }
-   }
- }
-
-// form
- #form {
-   max-width: 600px;
-   .form-buttons {
-     display: flex;
-    justify-content:space-between;
-   }
- }
-
- #form-alerts {
-   margin: auto;
-   @media (min-width: 768px) {
-    width: 550px;
-   }
-   transition: 0.7s ease-in;
-   animation: 0.7s formAlert forwards;
-   opacity: 0;
- }
- @keyframes formAlert {
-   0% {
-    transform: translateY(-100px);
-   }
-   100% {
-     transform: translateY(0px);
-     opacity: 1;
-   }
- }
-
- // for individual articles
-.article {
-  padding: 0;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  &-actions {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-    a {
-      margin-right: 10px;
-      margin-bottom: 10px;
-    }
-  }
-  &-card {
-    padding: 5px;
-  }
-  &-title {
-    font-size: 1.5em;
-    text-align: center;
-    font-weight: 800;
-    @media (min-width: 687px) {
-      font-size: 2em;
-    }
-    a {
-      color: #2E2F30;
-      &:visited {
-        color: #2E2F30;
-      }
-    }
-  }
-  &-body {
-    font-weight: 400;
-  }
-  &-meta-details {
-    border-top: 1px solid #eaeaea;
-    margin: 10px 0;
-    color: black;
-    font-weight: 400;
-    opacity: 0.8;
-  }
-}
 
 // i don't know why and this isn't a css-related project
 // so I can't be bothered to fix it properly

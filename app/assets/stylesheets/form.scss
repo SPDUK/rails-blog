@@ -1,0 +1,27 @@
+#form {
+  max-width: 600px;
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#form-alerts {
+  margin: auto;
+  @media (min-width: 768px) {
+    width: 550px;
+  }
+  transition: 0.7s ease-in;
+  animation: 0.7s formAlert forwards;
+  opacity: 0;
+}
+
+@keyframes formAlert {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

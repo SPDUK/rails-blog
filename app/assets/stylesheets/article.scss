@@ -1,0 +1,42 @@
+// for individual articles
+.article {
+  padding: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  &-actions {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    a {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  &-card {
+    padding: 5px;
+  }
+  &-title {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 800;
+    @media (min-width: 687px) {
+      font-size: 2em;
+    }
+    a {
+      color: #2E2F30;
+      &:visited {
+        color: #2E2F30;
+      }
+    }
+  }
+  &-body {
+    font-weight: 400;
+  }
+  &-meta-details {
+    border-top: 1px solid #eaeaea;
+    margin: 10px 0;
+    color: black;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+}

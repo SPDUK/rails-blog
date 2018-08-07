@@ -1,0 +1,10 @@
+#logo {
+  transition: 0.2s ease-in;
+  font-weight: 800;
+  color: #fafafa;
+  &:hover {
+    transition: 0.2s ease-in;
+    transform: scale(1.04);
+    color: darken($color: #fafafa, $amount: 20);
+  }
+}
