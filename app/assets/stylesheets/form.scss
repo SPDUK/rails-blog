@@ -13,15 +13,16 @@
   }
   transition: 0.7s ease-in;
   animation: 0.7s formAlert forwards;
-  opacity: 0;
+  overflow: hidden;
 }
 
 @keyframes formAlert {
   0% {
-    transform: translateY(-100px);
+    height: 0;
+    opacity: 0;
   }
   100% {
-    transform: translateY(0px);
     opacity: 1;
+    height: 100%;
   }
 }
