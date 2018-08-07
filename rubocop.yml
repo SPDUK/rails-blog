@@ -16,6 +16,10 @@ Performance:
 Rails:
   Enabled: true
 
+# Line length
+Metrics/LineLength:
+  Max: 100
+
 # Prefer assert_not over assert !
 Rails/AssertNot:
   Include:
