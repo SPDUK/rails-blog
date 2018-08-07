@@ -15,7 +15,7 @@
  *= require_self
  */
 
-//   logo / navbar
+//   logo / navigation
  #logo {
   transition: 0.2s ease-in;
   font-weight: 800;
@@ -27,7 +27,7 @@
   }
  }
 
-// jumobotron
+// index css
  .jumbotron {
     height: 95vh;
     width: 100%;
@@ -37,7 +37,7 @@
     -o-background-size: cover;
     background-size: cover;
     text-align: center;
-    border-radius: 0px;
+   border-radius: 0;
     @media (min-width: 768px) {
       height: 800px;
     }
@@ -60,7 +60,7 @@
  .footer {
    text-align: center;
    background-color: rgb(207, 207, 207);
-   padding: 20px 0px;
+   padding: 20px 0;
    a {
      color: rgb(39, 39, 39);
      &:visited {
@@ -71,16 +71,16 @@
     display: flex;
     list-style: none;
     justify-content: center;
-    padding-left: 0px;
-    margin: 0px;
+     padding-left: 0;
+     margin: 0;
     li {
       text-align: center;
-      margin: 0px 2%;
+      margin: 0 2%;
     }
    }
  }
 
-// form stuff
+// form
  #form {
    max-width: 600px;
    .form-buttons {
@@ -91,11 +91,10 @@
 
  #form-alerts {
    margin: auto;
-   opacity: 0.9;
    @media (min-width: 768px) {
     width: 550px;
    }
-   transition: 0.7 ease-in;
+   transition: 0.7s ease-in;
    animation: 0.7s formAlert forwards;
    opacity: 0;
  }
@@ -111,7 +110,7 @@
 
  // for individual articles
 .article {
-  padding: 0px;
+  padding: 0;
   margin-top: 15px;
   margin-bottom: 15px;
   &-actions {
@@ -127,12 +126,29 @@
     padding: 5px;
   }
   &-title {
-
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 800;
+    @media (min-width: 687px) {
+      font-size: 2em;
+    }
+    a {
+      color: #2E2F30;
+      &:visited {
+        color: #2E2F30;
+      }
+    }
   }
   &-body {
-
+    font-weight: 400;
   }
-
+  &-meta-details {
+    border-top: 1px solid #eaeaea;
+    margin: 10px 0;
+    color: black;
+    font-weight: 400;
+    opacity: 0.8;
+  }
 }
 
 // i don't know why and this isn't a css-related project
