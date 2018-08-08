@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -13,6 +15,9 @@ class UsersController < ApplicationController
       # figure out why this route changes to /users
       render 'new'
     end
+  end
+
+  def show
 
   end
 
