@@ -1,0 +1,18 @@
+<h1 align="center">All Blogs</h1>
+
+<%= @users.each do |user| %>
+  <div class="row listing">
+    <div class="card col-md-4 offset-md-4 bg-light">
+      <ul align="center" class="listing-inner">
+        <li><%= link_to gravatar_for(user), user_path(user) %></li>
+        <li class="article-title">
+          <%= link_to user.username, user_path(user) %>
+        </li>
+        <li>
+          <small><%= pluralize(user.articles.count, "article") %></small>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<% end %>

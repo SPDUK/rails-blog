@@ -7,3 +7,12 @@
   justify-content: center;
 
 }
+
+.listing {
+  margin-bottom: 20px;
+  &-inner {
+    padding: 5px;
+    list-style: none;
+    margin-bottom: 0;
+  }
+}
