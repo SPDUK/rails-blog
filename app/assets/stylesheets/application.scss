@@ -28,3 +28,8 @@
 html, body {
   overflow-x: hidden;
 }
+
+.centered {
+  display: flex;
+  justify-content: center;
+}

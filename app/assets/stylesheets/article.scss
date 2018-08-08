@@ -11,23 +11,18 @@
 
   }
   &-actions {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    //display: flex;
+    //justify-content: flex-start;
+    //flex-wrap: wrap;
     a {
       margin-right: 10px;
       margin-bottom: 10px;
     }
   }
-  &-card {
-    padding: 5px;
-  }
   &-title {
     font-size: 1.5em;
     font-weight: 800;
-    @media (min-width: 687px) {
-      font-size: 2em;
-    }
+    color: #373737;
     a {
       color: #2E2F30;
       &:visited {
@@ -37,12 +32,19 @@
   }
   &-body {
     font-weight: 400;
+    padding: 10px;
   }
   &-meta-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     border-top: 1px solid #eaeaea;
     margin: 10px 0;
     color: black;
     font-weight: 400;
     opacity: 0.8;
+    small {
+      margin: 5px 0;
+    }
   }
 }
