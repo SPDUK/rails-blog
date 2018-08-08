@@ -1,6 +1,11 @@
 <h1 align="center">All articles</h1>
 <%= link_to "Create a new article", new_article_path, :class => "btn btn-primary" %>
-
+<div align="center">
+  <%= will_paginate renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
 <div class="container">
   <%= render 'article', obj: @articles %>
+  <div class="centered">
+    <%= will_paginate renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
 </div>
