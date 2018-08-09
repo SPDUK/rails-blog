@@ -3,11 +3,11 @@
 class ArticlesController < ApplicationController
   # do this before doing any of the actions
   # sets article to be the current article clicked, on how? magic
-  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  before_action :set_article, only: %i[edit update show destroy]
   # requires user to the be logged in
-  before_action :require_user, except: [:index, :show]
+  before_action :require_user, except: %i[index show]
   # requires user to be the one that actually owns the article
-  before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :require_same_user, only: %i[edit update destroy]
 
   def index
     # named plural because it finds all
@@ -63,15 +63,15 @@ class ArticlesController < ApplicationController
   end
 
   def require_user
-    if !logged_in?
-      flash[:danger] = "You must be logged in to perform that action"
+    unless logged_in?
+      flash[:danger] = 'You must be logged in to perform that action'
       redirect_to root_path
     end
   end
 
   def require_same_user
     if current_user != @article.user
-      flash[:danger] = "You can only edit or delete your own articles"
+      flash[:danger] = 'You can only edit or delete your own articles'
       redirect_to root_path
     end
   end
