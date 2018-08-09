@@ -11,9 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    if current_user
-      return true
-    end
+    current_user
   end
 
   def require_user
