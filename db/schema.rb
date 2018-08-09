@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_180_807_094_146) do
+ActiveRecord::Schema.define(version: 20_180_809_132_016) do
   create_table 'articles', force: :cascade do |t|
     t.string 'title'
     t.text 'description'
@@ -27,5 +27,6 @@ ActiveRecord::Schema.define(version: 20_180_807_094_146) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.string 'password_digest'
+    t.boolean 'admin', default: false
   end
 end
