@@ -33,8 +33,7 @@ class UsersController < ApplicationController
     @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
-  def edit;
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
@@ -77,4 +76,5 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
+end
 end

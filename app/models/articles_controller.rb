@@ -29,8 +29,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show;
-  end
+  def show; end
 
   def update
     # use the article_params method for validation
@@ -48,8 +47,7 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-  def edit;
-  end
+  def edit; end
 
   private
 
