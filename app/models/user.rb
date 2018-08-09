@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class User < ActiveRecord::Base
-  # User has many articles
-  has_many :articles
+  # User has many articles, destroys all if the user is deleted
+  has_many :articles, dependent: :destroy
   # User.email is turned to lowercase before saving
   before_save { self.email = email.downcase }
   # User.username - required, unique case insensitive, length 3-20
