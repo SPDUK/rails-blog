@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  # do this before doing any of the CRUD actions
+  # do this before doing any of the actions
   # sets article to be the current article clicked, on how? magic
   before_action :set_article, only: [:edit, :update, :show, :destroy]
+  # requires user to the be logged in
   before_action :require_user, except: [:index, :show]
+  # requires user to be the one that actually owns the article
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
@@ -27,7 +29,8 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show; end
+  def show;
+  end
 
   def update
     # use the article_params method for validation
@@ -45,7 +48,8 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-  def edit; end
+  def edit;
+  end
 
   private
 
@@ -56,5 +60,19 @@ class ArticlesController < ApplicationController
   def article_params
     # top level key article
     params.require(:article).permit(:title, :description)
+  end
+
+  def require_user
+    if !logged_in?
+      flash[:danger] = "You must be logged in to perform that action"
+      redirect_to root_path
+    end
+  end
+
+  def require_same_user
+    if current_user != @article.user
+      flash[:danger] = "You can only edit or delete your own articles"
+      redirect_to root_path
+    end
   end
 end
