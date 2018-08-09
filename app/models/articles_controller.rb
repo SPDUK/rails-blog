@@ -3,7 +3,9 @@
 class ArticlesController < ApplicationController
   # do this before doing any of the CRUD actions
   # sets article to be the current article clicked, on how? magic
-  before_action :set_article, only: %i[edit update show destroy]
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     # named plural because it finds all
@@ -16,7 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     if @article.save
       flash[:success] = 'Article was saved'
       redirect_to article_path(@article)

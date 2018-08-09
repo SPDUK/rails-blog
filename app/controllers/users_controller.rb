@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = "Welcome to blogs on rails #{@user.username}"
+      flash[:success] = "Welcome to Blogs on Rails, #{@user.username}"
       redirect_to articles_path
     else
       # figure out why this route changes to /users
