@@ -1,0 +1,15 @@
+.categories {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 50px;
+  margin-bottom: 30px;
+  a, a:visited {
+    color: #373737;
+  }
+  &-wrapper {
+    width: 400px;
+    height: 80vh;
+  }
+}
