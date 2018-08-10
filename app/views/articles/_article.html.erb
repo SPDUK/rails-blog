@@ -11,7 +11,7 @@
             <small>Created by:<strong><%= article.user.username if article.user %></strong></small>
             <small><%= time_ago_in_words(article.created_at) %> ago</small>
             <small>last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
-            <% if logged_in? && article.user == current_user || current_user.admin? %>
+            <% if logged_in? && article.user == current_user || logged_in? && current_user.admin? %>
               <div class="article-actions">
                 <%= link_to "Edit this article", edit_article_path(article), :class => "btn btn-info btn-sm" %>
                 <%= link_to "Delete this article",

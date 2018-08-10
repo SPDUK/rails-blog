@@ -22,10 +22,12 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
   test "invalid category submission results in failure" do
     get new_category_path
     assert_template "categories/new"
+    # make sure nothing was added to the database
     assert_no_difference "Category.count" do
       post categories_path, params: {category: {name: ""}}
     end
     assert_template "categories/new"
+    # make sure the alert shows if there is an error
     assert_select 'div.alert-heading'
     assert_select 'h2'
   end
