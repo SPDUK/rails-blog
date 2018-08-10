@@ -11,8 +11,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20_180_810_111_714) do
+ActiveRecord::Schema.define(version: 2018_08_10_111714) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "description"
