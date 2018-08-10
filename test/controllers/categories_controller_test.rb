@@ -19,11 +19,8 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-# category GET    /categories/:id(.:format)       categories#show
-test "should get show" do
-  get(:show, {'id' => @category.id})
-    assert_response :success
-  end
-
+  test "should get show" do
+      get(:show, params: {id: @category.id})
+      assert_response :success
+    end
 end
-

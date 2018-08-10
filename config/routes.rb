@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about"
   resources :articles
 
-  #signup routes
+  # signup routes
   get "/signup", to: "users#new"
   resources :users, except: [:new]
 
@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  #categories routes
+  # categories routes
   resources :categories, except: [:destroy]
 end
