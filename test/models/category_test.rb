@@ -27,4 +27,16 @@ class CategoryTest < ActiveSupport::TestCase
     @category2 = Category.new(name: "sports")
     assert_not @category2.valid?
   end
+
+  # the name should not be longer than 25 chars
+  test "name should not be too long" do
+    @category.name = "a" * 26
+    assert_not @category.valid?
+  end
+
+  # the name should not be less than 3 chars
+  test "name should not be too short" do
+    @category.name = "aa"
+    assert_not @category.valid?
+  end
 end
