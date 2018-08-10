@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
+  before_action :require_admin, except: [:index, :show]
+
   def index
     @categories = Category.paginate(page: params[:page], per_page: 5)
   end
@@ -22,12 +24,19 @@ class CategoriesController < ApplicationController
     end
   end
 
-end
 
+  private
 
-private
+  def category_params
+    params.require(:category).permit(:name)
+  end
 
-def category_params
-  params.require(:category).permit(:name)
+  def require_admin
+    if !logged_in? || (logged_in? && !current_user.admin?)
+      flash[:danger] = "Only admins can perform this action"
+      redirect_to categories_path
+    end
+  end
+
 end
 
