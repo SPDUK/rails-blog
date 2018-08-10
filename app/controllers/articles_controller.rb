@@ -22,10 +22,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
-      flash[:success] = 'Article was saved'
+      flash[:success] = "Article was saved"
       redirect_to article_path(@article)
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -34,16 +34,16 @@ class ArticlesController < ApplicationController
   def update
     # use the article_params method for validation
     if @article.update(article_params)
-      flash[:success] = 'Article was updated'
+      flash[:success] = "Article was updated"
       redirect_to article_path(@article)
     else
-      render 'edit'
+      render "edit"
     end
   end
 
   def destroy
     @article.destroy
-    flash[:danger] = 'Article was deleted'
+    flash[:danger] = "Article was deleted"
     redirect_to articles_path
   end
 
@@ -51,26 +51,26 @@ class ArticlesController < ApplicationController
 
   private
 
-  def set_article
-    @article = Article.find(params[:id])
-  end
-
-  def article_params
-    # top level key article
-    params.require(:article).permit(:title, :description)
-  end
-
-  def require_user
-    unless logged_in?
-      flash[:danger] = 'You must be logged in to perform that action'
-      redirect_to root_path
+    def set_article
+      @article = Article.find(params[:id])
     end
-  end
 
-  def require_same_user
-    if current_user != @article.user && !current_user.admin
-      flash[:danger] = 'You can only edit or delete your own article'
-      redirect_to root_path
+    def article_params
+      # top level key article
+      params.require(:article).permit(:title, :description)
     end
-  end
+
+    def require_user
+      unless logged_in?
+        flash[:danger] = "You must be logged in to perform that action"
+        redirect_to root_path
+      end
+    end
+
+    def require_same_user
+      if current_user != @article.user && !current_user.admin
+        flash[:danger] = "You can only edit or delete your own article"
+        redirect_to root_path
+      end
+    end
 end

@@ -30,5 +30,3 @@
 /config/master.key
 
 .idea
-.solargraph.yml
-.rubocop.yml
