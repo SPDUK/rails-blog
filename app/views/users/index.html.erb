@@ -1,6 +1,6 @@
 <h1 align="center">All Blogs</h1>
 
-<%= @users.each do |user| %>
+<% @users.each do |user| %>
   <div class="row listing">
     <div class="card col-md-4 offset-md-4 bg-light">
       <ul align="center" class="listing-inner">
@@ -14,7 +14,6 @@
           <li><%= link_to "Delete this user", user_path(user), method: :delete,
                           data: {confirm: "Are you sure you want to delete the user and all their articles?"} %></li>
         <% end %>
-        </li>
       </ul>
     </div>
   </div>
