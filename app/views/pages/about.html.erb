@@ -1,11 +1,17 @@
-<div class="jumbotron">
+<div style="min-height: 100vh;" class="jumbotron">
   <div class="container">
     <div class="jumbotron-title">
-      <p> About page</p>
-      <p>Hello world</p>  
-      <%= link_to 'Home', root_path, :class => "btn btn-light card-link"%>
-      <%= link_to 'Create an article', new_article_path, :class => "btn btn-primary card-link"%>
-    </div>
+      <div class="card">
+        <div class="card-title text-dark bg-light">
+          <h4>About this site</h4>
+        </div>
+        <div class="card-body text-dark">
+          <h5>A simple blogging platform using rails for the first time</h5>
+          <h5>Includes all the CRUD basics, join tables for categories and a search for articles. </h5>
+        </div>
+      </div>
+      <%= link_to 'Home', root_path, :class => "btn btn-light card-link" %>
+      <a href="https://github.com/SPDUK" class="btn btn-primary card-link">My Github</a>
     </div>
   </div>
 </div>
