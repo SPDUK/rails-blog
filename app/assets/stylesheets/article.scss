@@ -43,6 +43,7 @@
     color: black;
     font-weight: 400;
     opacity: 0.8;
+    padding: 0px;
     small {
       margin: 5px 0;
     }
@@ -60,4 +61,8 @@
   a, a:visited {
     color: --blue
   }
+}
+
+.articles-dropdown {
+  margin-bottom: 40px;
 }
