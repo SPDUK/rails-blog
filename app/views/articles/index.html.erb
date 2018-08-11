@@ -1,4 +1,4 @@
-<h1 align="center">All articles</h1>
+<h1 align="center"> Articles </h1>
 <!--TODO: remove this link or u se it later -->
 <%#= link_to "Create a new article", new_article_path, :class => "btn btn-primary" %>
 <div class="container">
@@ -13,9 +13,11 @@
       <% end %>
     </div>
   </div>
+  <!--  if a search is entered then we render the search results, else render all articles-->
   <% what_to_render = request.fullpath.end_with?("Search") ? @search_results : @articles %>
   <%= render 'article', obj: what_to_render %>
   <div class="centered">
+    <!-- pagination changes based on if the current url is a search or just viewing all articles-->
     <%= will_paginate what_to_render, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
   </div>
 </div>
