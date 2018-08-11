@@ -12,6 +12,9 @@ gem "jquery-rails"
 gem "bcrypt", "~> 3.1.7"
 gem "rails", "~> 5.2.0"
 
+# Search
+gem 'ransack'
+
 gem "will_paginate", "~> 3.1.0"
 gem "will_paginate-bootstrap4"
 # Use Puma as the app server

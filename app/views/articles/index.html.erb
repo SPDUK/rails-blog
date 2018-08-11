@@ -2,8 +2,17 @@
 <!--TODO: remove this link or u se it later -->
 <%#= link_to "Create a new article", new_article_path, :class => "btn btn-primary" %>
 <div class="container">
-  <%= render 'article', obj: @articles %>
   <div class="centered">
+    <%= search_form_for @q do |f| %>
+      <%= f.label "title_cont", "Title contains" %>
+      <%= f.search_field "title_cont" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <% url = request.fullpath.end_with?("Search") ? @search_results : @articles %>
+  <%= render 'article', obj: url %>
+  <div class="centered">
+
     <%= will_paginate renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
   </div>
 </div>

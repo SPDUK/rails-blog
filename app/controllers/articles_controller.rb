@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
   def index
     # named plural because it finds all
     @articles = Article.paginate(page: params[:page], per_page: 5)
+    @q = Article.ransack(params[:q])
+    @search_results = @q.result(distinct: true)
   end
 
   def new
