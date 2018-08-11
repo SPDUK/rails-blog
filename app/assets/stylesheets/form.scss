@@ -6,7 +6,8 @@
   }
 }
 
-#form-alerts {
+.alert {
+  position: relative;
   margin: auto;
   @media (min-width: 768px) {
     width: 550px;
@@ -18,11 +19,9 @@
 
 @keyframes formAlert {
   0% {
-    height: 0;
     opacity: 0;
   }
   100% {
     opacity: 1;
-    height: 100%;
   }
 }

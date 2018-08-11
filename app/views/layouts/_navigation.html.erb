@@ -8,15 +8,8 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if logged_in? %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-             aria-haspopup="true" aria-expanded="false">
-            Actions
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "New Article", new_article_path, class: "dropdown-item" %>
-            <%= link_to "New Article", new_article_path, class: "dropdown-item" %>
-          </div>
+        <li class="nav-item">
+          <%= link_to "New Article", new_article_path, class: "nav-link active" %>
         </li>
       <% end %>
       <li class="nav-item dropdown">
@@ -57,7 +50,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'View Profile', user_path(current_user), class: "dropdown-item" %>
-            <%= link_to 'Your Profile', edit_user_path(current_user), method: :delete, class: "dropdown-item" %>
+            <%= link_to 'Edit Profile', edit_user_path(current_user), class: "dropdown-item" %>
             <%= link_to 'Log Out', logout_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
