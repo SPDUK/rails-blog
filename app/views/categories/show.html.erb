@@ -1,0 +1,10 @@
+<h1 align="center"><%= "Category:" + @category.name %></h1>
+<%= link_to "Create a new article", new_article_path, :class => "btn btn-primary" %>
+<div align="center">
+</div>
+<div class="container">
+  <%= render 'articles/article', obj: @categories %>
+  <div class="centered">
+    <%= will_paginate renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
+</div>

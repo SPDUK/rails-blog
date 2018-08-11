@@ -2,9 +2,16 @@
 <div class="categories-wrapper container">
   <% @categories.each do |category| %>
     <div class="card categories">
-      <%= link_to "#{category.name}", category_path(category) %>
+      <div class="card-header">
+        <%= link_to "#{category.name}", category_path(category) %>
+      </div>
+      <div class="card-subtitle bg-light">
+        <small><%= pluralize(category.articles.count, "article") %></small>
+      </div>
     </div>
+
   <% end %>
+
   <div class="centered">
     <%= will_paginate %>
   </div>
