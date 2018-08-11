@@ -1,5 +1,5 @@
 .jumbotron {
-  height: 1000px;
+  height: 80vh;
   width: 100%;
   background: asset-url('rails.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -51,6 +51,9 @@
     border-radius: 5px;
 
   }
-
 }
 
+.home-icon {
+  font-size: 2em;
+  margin-top: 50px;
+}
