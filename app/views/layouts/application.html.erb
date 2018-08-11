@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog</title>
-    <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <meta charset="utf-8">
-  </head>
+<head>
+  <title>Blog</title>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta charset="utf-8">
+</head>
 
-  <body>
-    <%= render 'layouts/navigation'%>
-    <%= render 'layouts/messages'%>
-      <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
-    <%= render 'layouts/footer'%>
-  </body>
+<body>
+<%= render 'layouts/navigation' %>
+<%= render 'layouts/messages' %>
+<%= yield %>
+<%= debug(params) if Rails.env.development? %>
+<%= render 'layouts/footer' %>
+</body>
 </html>
