@@ -54,26 +54,26 @@ class ArticlesController < ApplicationController
 
   private
 
-    def set_article
-      @article = Article.find(params[:id])
-    end
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
-    def article_params
-      # top level key article
-      params.require(:article).permit(:title, :description)
-    end
+  def article_params
+    # top level key article
+    params.require(:article).permit(:title, :description, category_ids: [])
+  end
 
-    def require_user
-      unless logged_in?
-        flash[:danger] = "You must be logged in to perform that action"
-        redirect_to root_path
-      end
+  def require_user
+    unless logged_in?
+      flash[:danger] = "You must be logged in to perform that action"
+      redirect_to root_path
     end
+  end
 
-    def require_same_user
-      if current_user != @article.user && !current_user.admin
-        flash[:danger] = "You can only edit or delete your own article"
-        redirect_to root_path
-      end
+  def require_same_user
+    if current_user != @article.user && !current_user.admin
+      flash[:danger] = "You can only edit or delete your own article"
+      redirect_to root_path
     end
+  end
 end
