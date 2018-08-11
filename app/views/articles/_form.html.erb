@@ -11,6 +11,19 @@
       <%= f.text_area :description, class: "form-control", placeholder: "Enter a description" %>
     </div>
     <div class="form-group form-buttons">
+      <div class="dropdown">
+        <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Add categories
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+            <% cb.label(class: "dropdown-item") {cb.check_box(class: "checkbox article-checkbox") + cb.text} %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group form-buttons">
       <%= link_to "Back to All Articles", articles_path, class: "btn" %>
       <%= f.submit class: "btn btn-primary" %>
     </div>
