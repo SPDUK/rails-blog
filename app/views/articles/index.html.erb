@@ -8,15 +8,14 @@
         <%#= f.label "title_cont", "Title contains", class: "form-control" %>
         <%= f.search_field "title_cont", class: "form-control", placeholder: "Search" %>
         <span class="input-group-prepend">
-        <%= f.submit "Search", class: "btn btn-outline-primary", type: "button" %>
+        <%= f.submit "Search", class: "btn btn-outline-primary" %>
         </span>
       <% end %>
     </div>
   </div>
-  <% url = request.fullpath.end_with?("Search") ? @search_results : @articles %>
-  <%= render 'article', obj: url %>
+  <% what_to_render = request.fullpath.end_with?("Search") ? @search_results : @articles %>
+  <%= render 'article', obj: what_to_render %>
   <div class="centered">
-
-    <%= will_paginate renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    <%= will_paginate what_to_render, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
   </div>
 </div>
