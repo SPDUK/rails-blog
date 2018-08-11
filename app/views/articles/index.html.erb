@@ -3,11 +3,15 @@
 <%#= link_to "Create a new article", new_article_path, :class => "btn btn-primary" %>
 <div class="container">
   <div class="centered">
-    <%= search_form_for @q do |f| %>
-      <%= f.label "title_cont", "Title contains" %>
-      <%= f.search_field "title_cont" %>
-      <%= f.submit %>
-    <% end %>
+    <div class="input-group article-form">
+      <%= search_form_for @q, class: "input-group" do |f| %>
+        <%#= f.label "title_cont", "Title contains", class: "form-control" %>
+        <%= f.search_field "title_cont", class: "form-control", placeholder: "Search" %>
+        <span class="input-group-prepend">
+        <%= f.submit "Search", class: "btn btn-outline-primary", type: "button" %>
+        </span>
+      <% end %>
+    </div>
   </div>
   <% url = request.fullpath.end_with?("Search") ? @search_results : @articles %>
   <%= render 'article', obj: url %>
