@@ -1,40 +1,43 @@
 <h2 align="center">Title: <%= @article.title %></h2>
 <!--TODO: fix the back button being too small?-->
-<div class="centered">
-  <div class="card bg-light article">
-    <% if @article.user %>
-      <h4 align="center" class="card-header"><strong>Created By</strong></h4>
-      <div class="card-body">
-        <div class="row listing">
-          <div class="col-md-4 offset-md-4">
-            <ul align="center" class="listing-inner">
-              <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
-              <li class="article-title">
-                <%= link_to @article.user.username, user_path(@article.user) %>
-              </li>
-              <li>
-                <small><%= pluralize(@article.user.articles.count, "article") %></small>
-              </li>
-            </ul>
+<div class="container">
+  <div class="centered">
+    <div class="card bg-light article">
+      <% if @article.user %>
+        <h4 align="center" class="card-header"><strong>Created By</strong></h4>
+        <div class="card-body">
+          <div class="row listing">
+            <div class="col-md-4 offset-md-4">
+              <ul align="center" class="listing-inner">
+                <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+                <li class="article-title">
+                  <%= link_to @article.user.username, user_path(@article.user) %>
+                </li>
+                <li>
+                  <small><%= pluralize(@article.user.articles.count, "article") %></small>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <%= simple_format(@article.description) %>
-        <% if @article.categories.any? %>
-          <p><%= render @article.categories %></p>
-        <% end %>
-        <div class="article-actions">
-          <%= link_to "Back to all articles", articles_path, :class => "btn btn-link" %>
-          <% if logged_in? && (current_user == @article.user || logged_in? && current_user.admin?) %>
-            <%= link_to "Edit", edit_article_path(@article), :class => "btn btn-info btn-sm" %>
-            <%= link_to "Delete",
-                        article_path(@article),
-                        method: :delete,
-                        data: {confirm: "Are you sure you want to delete this article?"},
-                        :class => "btn btn-danger btn-sm" %>
+          <%= simple_format(@article.description) %>
+          <% if @article.categories.any? %>
+            <p><%= render @article.categories %></p>
           <% end %>
-        </div>
-    <% end %>
+          <div class="article-actions">
+            <%= link_to "Back to all articles", articles_path, :class => "btn btn-link" %>
+            <% if logged_in? && (current_user == @article.user || logged_in? && current_user.admin?) %>
+              <%= link_to "Edit", edit_article_path(@article), :class => "btn btn-info btn-sm" %>
+              <%= link_to "Delete",
+                          article_path(@article),
+                          method: :delete,
+                          data: {confirm: "Are you sure you want to delete this article?"},
+                          :class => "btn btn-danger btn-sm" %>
+            <% end %>
+          </div>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
+
 

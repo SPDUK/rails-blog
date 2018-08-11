@@ -1,12 +1,13 @@
 <h1 align="center">Welcome to <%= @user.username %>'s page</h1>
+<div class="container">
+  <div class="gravatar">
+    <%= gravatar_for @user, size: 150 %>
+  </div>
 
-<div class="gravatar">
-  <%= gravatar_for @user, size: 150 %>
-</div>
+  <h4 align="center"> <%= @user.username %>'s articles</h4>
 
-<h4 align="center"> <%= @user.username %>'s articles</h4>
-
-<%= render 'articles/article', obj: @user.articles %>
-<div class="centered">
-  <%= will_paginate @user_articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  <%= render 'articles/article', obj: @user.articles %>
+  <div class="centered">
+    <%= will_paginate @user_articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
 </div>
