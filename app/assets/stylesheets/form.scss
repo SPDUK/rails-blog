@@ -6,12 +6,28 @@
   }
 }
 
-.alert {
-  position: relative;
+.alert-success {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
   margin: auto;
+  z-index: 500;
+  transition: 3s ease-in;
+  animation: 3s formAlert forwards;
+  overflow: hidden;
   @media (min-width: 768px) {
     width: 550px;
   }
+}
+
+.alert-danger {
+  //top: 50px;
+  //left: 0;
+  //right: 0;
+  max-width: 600px;
+  margin: auto;
+  z-index: 500;
   transition: 0.7s ease-in;
   animation: 0.7s formAlert forwards;
   overflow: hidden;
@@ -21,7 +37,13 @@
   0% {
     opacity: 0;
   }
-  100% {
+  10% {
     opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

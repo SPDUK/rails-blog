@@ -1,5 +1,4 @@
 <h1 align="center"><%= "Category:" + @category.name %></h1>
-<%= link_to "Create a new article", new_article_path, :class => "btn btn-primary" %>
 <% if logged_in? && current_user.admin? %>
   <div align="center">
     <span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
