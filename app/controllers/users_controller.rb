@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       # figure out why this route changes to /users
-      render "new"
+      render 'new'
     end
   end
 
@@ -33,14 +33,15 @@ class UsersController < ApplicationController
     @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
-  def edit; end
+  def edit;
+  end
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Your profile was updated"
+      flash[:success] = 'Your profile was updated'
       redirect_to articles_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -48,32 +49,34 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    flash[:danger] = "User and all articles have been deleted"
+    flash[:danger] = 'User and all articles have been deleted'
     redirect_to users_path
   end
 
   private
 
-    def user_params
-      # whitelist
-      params.require(:user).permit(:username, :email, :password)
-    end
+  def user_params
+    # whitelist
+    params.require(:user).permit(:username, :email, :password)
+  end
 
-    def set_user
-      @user = User.find(params[:id])
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    def require_same_user
-      if (current_user != @user) && !current_user.admin?
-        flash[:danger] = "You can only edit your own account"
-        redirect_to root_path
-      end
+  def require_same_user
+    if (current_user != @user) && !current_user.admin?
+      flash[:danger] = 'You can only edit your own account'
+      redirect_to root_path
     end
+  end
 
-    def require_admin
-      if logged_in? && !current_user.admin?
-        flash[:danger] = "Only admin users can perform that action"
-        redirect_to root_path
-      end
+  def require_admin
+    if logged_in? && !current_user.admin?
+      flash[:danger] = 'Only admin users can perform that action'
+      redirect_to root_path
     end
+  end
+
+
 end

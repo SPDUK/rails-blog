@@ -1,0 +1,19 @@
+.notfound {
+  display: flex;
+  height: 90vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &-title {
+    font-size: 10em;
+    @media (min-width: 786px) {
+      font-size: 15em;
+    }
+  }
+  &-text {
+    opacity: 0.7;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+}

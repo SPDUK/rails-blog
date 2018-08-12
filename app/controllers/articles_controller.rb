@@ -21,38 +21,37 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-
   def create
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
-      flash[:success] = "Article was saved"
+      flash[:success] = 'Article was saved'
       redirect_to article_path(@article)
     else
-      render "new"
+      render 'new'
     end
   end
 
-  def show
+  def show;
   end
 
   def update
     # use the article_params method for validation
     if @article.update(article_params)
-      flash[:success] = "Article was updated"
+      flash[:success] = 'Article was updated'
       redirect_to article_path(@article)
     else
-      render "edit"
+      render 'edit'
     end
   end
 
   def destroy
     @article.destroy
-    flash[:danger] = "Article was deleted"
+    flash[:danger] = 'Article was deleted'
     redirect_to articles_path
   end
 
-  def edit
+  def edit;
   end
 
   private
@@ -68,14 +67,14 @@ class ArticlesController < ApplicationController
 
   def require_user
     unless logged_in?
-      flash[:danger] = "You must be logged in to perform that action"
+      flash[:danger] = 'You must be logged in to perform that action'
       redirect_to root_path
     end
   end
 
   def require_same_user
     if current_user != @article.user && !current_user.admin
-      flash[:danger] = "You can only edit or delete your own article"
+      flash[:danger] = 'You can only edit or delete your own article'
       redirect_to root_path
     end
   end

@@ -1,4 +1,6 @@
 <%# TODO: find out why this is like this, why do I need partial: to fix it? %>
+<%# TODO: add in 404 routes%>
+
 <%= render partial: 'shared/errors', locals: {obj: @article} %>
 <div class="container" id="form">
   <%= form_for @article do |f| %>
