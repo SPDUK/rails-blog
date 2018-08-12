@@ -11,6 +11,10 @@ A CRUD app including search, join tables and authentication including admin righ
 * **Categories** - A list of Categories that an admin can add to or edit the name of, clicking on a category shows anything in that category
 
 All routes include authentication and authorization, admins can edit/delete articles, users and categories.
+
+Searches are made to stay on the same page, but only finding titles including that search term.
+
+Example searches: Programming, cat, bob ross.
 ___
 
 ### To run locally
