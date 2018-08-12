@@ -3,8 +3,13 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-To make heroku work: heroku run rake db:migrate
+How to run locally:
+clone the repo
+make sure you are using ruby 2.5.1, if not run  ``` rvm install ruby-2.5.1```
 
+Install gems```bundle install``` or ```bundle install --without production```
+Migrate and set up the datbase ```rake db:migrate```
+Then start the server ```rails s``` or if using cloud9 or similar you may need to specify a port instead``` rails s -b $IP -p $PORT```
 
 Things you may want to cover:
 
