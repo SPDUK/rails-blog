@@ -4,7 +4,7 @@ It might take a few seconds to load because it's hosted on heroku for free.
 
 ___
 
-A CRUD app including search, join tables and authentication including admin rights, made with Ruby on Rails using SQLite/PostgreSQL database.
+A CRUD app including search, join tables and authentication with admin rights, made using Ruby on Rails and SQLite database.
 
 * **Articles** - A list of all articles posted by any user
 * **Users**- A list of all current signed up users, each have a profile showing all articles
