@@ -1,7 +1,8 @@
 .jumbotron {
   height: 80vh;
   width: 100%;
-  background: asset-url('rails.jpg') no-repeat center center fixed;
+  background: url('https://res.cloudinary.com/dmjolhdaq/image/upload/v1551745458/rails-blog/rails.jpg')
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -51,7 +52,6 @@
     max-height: 345px;
     max-width: 480px;
     border-radius: 5px;
-
   }
 }
 
